@@ -1,0 +1,129 @@
+/* ===== RESET BÁSICO ===== */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #deb8c9;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background-image: url("../img/fondoInicio.jpg"); /* TU IMAGEN */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35); /* ajustable */
+}
+
+.hero-content {
+  position: relative; /* para estar por encima del overlay */
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 30px;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+.hero .date {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ===== CUENTA ATRÁS ===== */
+.countdown {
+  text-align: center;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* ===== CEREMONIA ===== */
+.ceremony {
+  text-align: center;
+}
+
+/* ===== CELEBRACIÓN ===== */
+.celebration {
+  text-align: center;
+}
+
+.ceremony,
+.celebration {
+  background-image: url("../img/fondoUbicaciones.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 80px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.ceremony::before,
+.celebration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.ceremony *,
+.celebration * {
+  position: relative;
+}
+
+
+/* ===== RSVP ===== */
+.rsvp {
+  text-align: center;
+}
+
+/* ===== AGRADECIMIENTO ===== */
+.thanks {
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #ccacc1;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b08d4e;
+}
