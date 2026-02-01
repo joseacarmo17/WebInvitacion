@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  background-color: #deb8c9;
+  background-color: #f8e0f4;
 }
 
 /* ===== HERO ===== */
@@ -53,7 +53,13 @@ body {
 /* ===== CUENTA ATRÁS ===== */
 .countdown {
   text-align: center;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 
 #timer {
   display: flex;
@@ -96,10 +102,54 @@ body {
   position: relative;
 }
 
+/* ===== BUSES ===== */
+.buses {
+  text-align: center;
+  background-image: url("../img/fondoAutobus.png");
+  height: 250px;
+
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  padding: 160px 20px 20px; /* ⬅️ CLAVE */
+  padding-bottom: 0px;
+  position: relative;
+}
+
+
+/* ===== HOTELES ===== */
+.hotels {
+  text-align: center;
+  background-image: url("../img/fondoHoteles.png");
+  height: 250px;
+
+  background-size: 100% auto; /* CLAVE */
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  padding: 210px 20px 20px; /* ⬅️ CLAVE */
+  padding-bottom: 0px;
+  position: relative;
+}
+
+/* ===== ALERGIAS ===== */
+.allergies {
+  text-align: center;
+
+  background-size: 100% auto; /* CLAVE */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #fffdfffa; /* beige suave */
+
+  padding: 80px 20px;
+  position: relative;
+}
 
 /* ===== RSVP ===== */
 .rsvp {
   text-align: center;
+  border-bottom: #b08d4e;
 }
 
 /* ===== AGRADECIMIENTO ===== */
