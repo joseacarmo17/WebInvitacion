@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 72" fill="none">
+  <rect x="7" y="59" width="8" height="12" rx="3" fill="#29262b"/>
+  <rect x="33" y="59" width="8" height="12" rx="3" fill="#29262b"/>
+  <path d="M6 14C6 6 11 2 24 2s18 4 18 12v49a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V14Z" fill="#d62835" stroke="#941c29" stroke-width="2"/>
+  <path d="M10 14c0-5 3-7 14-7s14 2 14 7v11H10V14Z" fill="#dceff0"/>
+  <path d="M24 8v17" stroke="#941c29" stroke-width="2"/>
+  <path d="m12 12 7-2M12 16l8-3M27 12l7-1" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <rect x="10" y="28" width="28" height="8" rx="2" fill="#302c31"/>
+  <text x="24" y="34" text-anchor="middle" fill="#fff4df" font-family="Arial, sans-serif" font-weight="bold" font-size="5">WEDDING</text>
+  <rect x="10" y="39" width="28" height="14" rx="2" fill="#dceff0"/>
+  <path d="M24 39v14" stroke="#941c29" stroke-width="2"/>
+  <path d="m13 50 7-3m8 3 7-3" stroke="#474b53" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="2" y="40" width="4" height="9" rx="2" fill="#941c29"/>
+  <rect x="42" y="40" width="4" height="9" rx="2" fill="#941c29"/>
+  <circle cx="13" cy="58" r="3" fill="#fff1c6"/>
+  <circle cx="35" cy="58" r="3" fill="#fff1c6"/>
+  <path d="M21 57h6m-6 3h6" stroke="#941c29" stroke-width="2" stroke-linecap="round"/>
+  <rect x="9" y="63" width="30" height="3" rx="1.5" fill="#eac9b7"/>
+</svg>

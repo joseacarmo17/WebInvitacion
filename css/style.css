@@ -3,13 +3,13 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  background-color: #f8e0f4;
+  background-color: #d34d6e;
 }
 
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background-image: url("../img/fondoInicio.jpg"); /* TU IMAGEN */
+  background-image: url("../img/FondoPortada1.png"); /* TU IMAGEN */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -53,11 +53,23 @@ body {
 /* ===== CUENTA ATRÁS ===== */
 .countdown {
   text-align: center;
+  font-family: "Kaushan Script", cursive;
+  font-size: 2rem;
   height: 200px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #d34d6e
+  /*background-image: url("../img/FondoImagen.jpeg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;*/
+/*  background-image: repeating-linear-gradient(
+    to right,
+    #d34d6e 0 16px,
+    #fdf7eb 16px 32px
+  );*/
 }
 
 
@@ -68,8 +80,36 @@ body {
 }
 
 /* ===== CEREMONIA ===== */
-.ceremony {
+.ceremony-image {
+  min-height: 420px;
+  background: url("../img/fondoIglesia3.png") center / cover no-repeat;
+}
+
+.ceremony-text,
+.ceremony-link {
+  font-family: "Kaushan Script", cursive;
+  padding: 52px 28px;
   text-align: center;
+  background: #fff;
+}
+
+.ceremony-text h2,
+.ceremony-link h2 {
+  font-family: "Kaushan Script", cursive;
+  margin: 0 0 14px;
+}
+
+.ceremony-text p {
+  margin: 6px 0;
+}
+
+.ceremony-link {
+  padding-top: 36px;
+  padding-bottom: 56px;
+}
+
+.ceremony-link .btn {
+  margin-top: 10px;
 }
 
 /* ===== CELEBRACIÓN ===== */
@@ -77,9 +117,7 @@ body {
   text-align: center;
 }
 
-.ceremony,
 .celebration {
-  background-image: url("../img/fondoUbicaciones.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,12 +127,11 @@ body {
   text-align: center;
 }
 
-.ceremony::before,
 .celebration::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ceremony *,
@@ -166,7 +203,7 @@ footer {
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background-color: #ccacc1;
+  background-color: #d34d6e;
   color: white;
   text-decoration: none;
   border-radius: 30px;
@@ -176,4 +213,88 @@ footer {
 
 .btn:hover {
   background-color: #b08d4e;
+}
+
+/* ===== RECORRIDO EN AUTOBÚS ===== */
+.scroll-journey {
+  --bus-width: 48px;
+  --bus-height: 72px;
+  position: fixed;
+  z-index: 20;
+  top: max(24px, env(safe-area-inset-top));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  right: max(16px, env(safe-area-inset-right));
+  width: var(--bus-width);
+  pointer-events: none;
+}
+
+.scroll-journey__track {
+  position: absolute;
+  top: calc(var(--bus-height) / 2);
+  bottom: calc(var(--bus-height) / 2);
+  left: calc(50% - 2px);
+  width: 4px;
+  border-radius: 4px;
+  background: rgba(148, 28, 41, 0.16);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.scroll-journey__fill {
+  height: 100%;
+  background: #d62835;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.scroll-journey__bus {
+  display: block;
+  width: var(--bus-width);
+  height: var(--bus-height);
+  filter: drop-shadow(0 3px 3px rgba(75, 28, 36, 0.2));
+}
+
+/* Reserva espacio para que el indicador no tape textos ni botones. */
+body > section,
+body > footer {
+  padding-left: max(80px, env(safe-area-inset-left));
+  padding-right: max(80px, env(safe-area-inset-right));
+}
+
+@media (max-width: 600px) {
+  .scroll-journey {
+    --bus-width: 28px;
+    --bus-height: 42px;
+    top: max(16px, env(safe-area-inset-top));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: max(6px, env(safe-area-inset-right));
+  }
+
+  body > section,
+  body > footer {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .hero-content {
+    min-width: 0;
+    padding: 30px 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 7vw, 3rem);
+  }
+
+  .hotels,
+  .buses {
+    height: auto;
+    min-height: 250px;
+    padding-bottom: 24px;
+  }
+}
+
+@media print {
+  .scroll-journey {
+    display: none;
+  }
 }

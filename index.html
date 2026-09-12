@@ -7,45 +7,55 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Indicador decorativo del recorrido por la página -->
+  <div class="scroll-journey" aria-hidden="true" hidden>
+    <div class="scroll-journey__track">
+      <div class="scroll-journey__fill"></div>
+    </div>
+    <img class="scroll-journey__bus" src="img/london-bus.svg" alt="" width="48" height="72">
+  </div>
 
   <!-- 🎵 Música (opcional) -->
   <audio id="music" loop>
-    <source src="audio/musica.mp3" type="audio/mpeg">
+    <source src="
+    audio/musica.mp3" type="audio/mpeg">
   </audio>
 
   <!-- 1️⃣ CABECERA / HERO -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Fernando <span>&</span> Patricia</h1>
-      <p>En el día de hoy nos hace mucha ilusión anunciar nuestro siguiente paso juntos: </p>
-      <p>¡Nos casamos!</p>
-      <p class="date">15 · Mayo · 2027</p>
     </div>
   </section>
 
   <!-- 2️⃣ CUENTA ATRÁS -->
   <section class="countdown">
-    <h2>Cuenta atrás para la boda</h2>
-    <div id="timer">
-      <div><span id="days"></span><small> Días</small></div>
-      <div><span id="hours"></span><small> Horas</small></div>
-      <div><span id="minutes"></span><small> Min</small></div>
-    </div>
-  </section>
+      <!--<h1>¡Nos casamos!</h1>-->
+      <div id="timer">
+        <div><span id="days"></span><small> Días</small></div>
+        <div><span id="hours"></span><small> Horas</small></div>
+        <div><span id="minutes"></span><small> Min</small></div>
+      </div>
+    </section>
 
-  <!-- 3️⃣ CEREMONIA -->
-  <section class="event ceremony">
+    <!-- 3️⃣ CEREMONIA -->
+  <section class="ceremony-image" aria-label="Imagen de la ceremonia"></section>
+
+  <section class="ceremony-text">
     <h2>Ceremonia</h2>
     <p>Parroquia de San Jacinto</p>
     <p>15 de mayo de 2027 · 12:00 h</p>
-    <a href="https://maps.app.goo.gl/zE3kBFSWw12GrEdD8" target="_blank" class="btn">
-    Ver ubicación
+  </section>
+
+  <section class="ceremony-link">
+    <h2>Cómo llegar</h2>
+    <a href="https://maps.app.goo.gl/2tB3AHtpeGZ9MSj38" target="_blank" rel="noopener noreferrer" class="btn">
+      Ver ubicación
     </a>
   </section>
 
@@ -131,5 +141,6 @@
 
   <!-- JS -->
   <script src="js/countdown.js"></script>
+  <!--<script src="js/scroll-journey.js"></script>-->
 </body>
 </html>
