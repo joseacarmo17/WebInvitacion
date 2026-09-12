@@ -82,7 +82,7 @@ body {
 /* ===== CEREMONIA ===== */
 .ceremony-image {
   min-height: 420px;
-  background: url("../img/fondoIglesia3.png") center / cover no-repeat;
+  background: url("../img/fondoIglesia3.PNG") center / cover no-repeat;
 }
 
 .ceremony-text,
