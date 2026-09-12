@@ -1,9 +1,13 @@
 /* ===== RESET BÁSICO ===== */
+:root {
+  --verde-ceremonia: #90b08b;
+}
+
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #333;
-  background-color: #d34d6e;
+  font-family: "Kaushan Script", cursive;
+  color: #fff;
+  background-color: var(--verde-ceremonia);
 }
 
 /* ===== HERO ===== */
@@ -21,35 +25,6 @@ body {
   text-align: center;
 }
 
-.hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.35); /* ajustable */
-}
-
-.hero-content {
-  position: relative; /* para estar por encima del overlay */
-  background: rgba(255, 255, 255, 0.85);
-  padding: 40px 30px;
-  border-radius: 8px;
-  max-width: 700px;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  margin: 10px 0;
-}
-
-.hero .date {
-  font-weight: bold;
-  margin-top: 20px;
-}
-
 /* ===== CUENTA ATRÁS ===== */
 .countdown {
   text-align: center;
@@ -60,7 +35,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #d34d6e
   /*background-image: url("../img/FondoImagen.jpeg");
   background-repeat: repeat-x;
   background-size: auto 100%;
@@ -86,88 +60,455 @@ body {
 }
 
 .ceremony-text,
-.ceremony-link {
+.ceremony-link,
+.celebration-text,
+.celebration-link {
   font-family: "Kaushan Script", cursive;
   padding: 52px 28px;
   text-align: center;
   background: #fff;
+  color: #000;
 }
 
 .ceremony-text h2,
-.ceremony-link h2 {
+.ceremony-link h2,
+.celebration-text h2,
+.celebration-link h2 {
   font-family: "Kaushan Script", cursive;
   margin: 0 0 14px;
 }
 
-.ceremony-text p {
+.ceremony-text p,
+.celebration-text p {
   margin: 6px 0;
 }
 
-.ceremony-link {
+body > .ceremony-text,
+body > .celebration-text {
+  padding: 0;
+  background: var(--verde-ceremonia);
+  color: #fff;
+}
+
+.ceremony-text img,
+.celebration-text img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ceremony-link,
+.celebration-link {
   padding-top: 36px;
   padding-bottom: 56px;
 }
 
-.ceremony-link .btn {
+.ceremony-link .btn,
+.celebration-link .btn {
   margin-top: 10px;
 }
 
 /* ===== CELEBRACIÓN ===== */
-.celebration {
-  text-align: center;
+.celebration-image {
+  min-height: 420px;
+  background: url("../img/FondoCelebracion.jpeg") center / cover no-repeat;
 }
 
-.celebration {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  padding: 80px 20px;
-  position: relative;
-  text-align: center;
+/* ===== TIMELINE ===== */
+body > .timeline {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.celebration::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.ceremony *,
-.celebration * {
-  position: relative;
+.timeline > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== BUSES ===== */
-.buses {
-  text-align: center;
-  background-image: url("../img/fondoAutobus.png");
-  height: 250px;
+body > .buses {
+  display: grid;
+  grid-template-columns: minmax(80px, 180px) minmax(0, 640px);
+  justify-content: center;
+  gap: clamp(20px, 4vw, 56px);
+  padding: 40px clamp(20px, 5vw, 80px);
+  background: transparent;
+  text-align: left;
+}
 
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: no-repeat;
-
-  padding: 160px 20px 20px; /* ⬅️ CLAVE */
-  padding-bottom: 0px;
+.buses-icon {
   position: relative;
+  min-height: 270px;
+}
+
+.buses-icon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.buses-text {
+  align-self: center;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.buses-text p {
+  margin: 0 0 20px;
+}
+
+.buses-text p:last-child {
+  margin-bottom: 0;
+}
+
+.nota-autobus {
+  font-size: 0.8em;
 }
 
 
 /* ===== HOTELES ===== */
 .hotels {
   text-align: center;
-  background-image: url("../img/fondoHoteles.png");
-  height: 250px;
+  padding: 52px 28px;
+}
 
-  background-size: 100% auto; /* CLAVE */
-  background-position: top center;
-  background-repeat: no-repeat;
+/* ===== PLAYLIST ===== */
+body > .playlist {
+  padding: 64px clamp(20px, 5vw, 80px);
+  background: #fff url("../img/fondoSpotify.jpeg") center / cover no-repeat;
+  color: var(--verde-ceremonia);
+  text-align: center;
+}
 
-  padding: 210px 20px 20px; /* ⬅️ CLAVE */
-  padding-bottom: 0px;
+/* ===== FOTOS DE LOS INVITADOS ===== */
+body > .photos {
+  min-height: 680px;
+  box-sizing: border-box;
+  padding: 90px clamp(24px, 7vw, 110px) 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--verde-ceremonia) url("../img/fondoFotos.jpeg") center / cover no-repeat;
+  /*background-color: var(--verde-ceremonia);
+  background-image: url("../img/fondoFotos.jpeg");
+  *//*background-size: 88% auto;*//*
+  background-position: center;
+  background-repeat: no-repeat;*/
+  color: #fff;
+  text-align: center;
+}
+
+.photos h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.photos p {
+  max-width: 520px;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  line-height: 1.45;
+}
+
+.photos-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 40px;
+  border: 2px solid currentColor;
+  border-radius: 30px;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.1rem;
+}
+
+.photos-btn:hover {
+  background: var(--verde-ceremonia);
+  color: #fff;
+}
+
+.playlist h2 {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.playlist hr {
+  width: 100px;
+  margin: 28px auto;
+  border: 0;
+  border-top: 2px solid currentColor;
+}
+
+.playlist-subtitle {
+  display: inline-block;
+  padding: 8px 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  margin: 0 0 32px;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.playlist-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 24px;
+  background: #242424;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+}
+
+.playlist-card[href]:hover {
+  background: #333;
+}
+
+.playlist-card:focus-visible {
+  outline: 3px solid var(--verde-ceremonia);
+  outline-offset: 5px;
+}
+
+.playlist-cover {
+  width: 32%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 14px;
+}
+
+.playlist-details {
+  display: grid;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+}
+
+.playlist-details strong {
+  font-size: clamp(1.2rem, 2.7vw, 2rem);
+  font-weight: 400;
+}
+
+.playlist-service,
+.playlist-action {
+  font-size: 1rem;
+}
+
+.playlist-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.playlist-service {
+  padding-right: 12px;
+  border-right: 1px solid #aaa;
+}
+
+.playlist-heading strong {
+  flex: 1;
+}
+
+.playlist-add {
+  display: grid;
+  place-items: center;
+  flex: 0 0 26px;
+  height: 26px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.playlist-progress {
+  height: 4px;
+  border-radius: 4px;
+  background: #777;
+}
+
+.playlist-progress > span {
+  display: block;
   position: relative;
+  width: 25%;
+  height: 100%;
+  background: #fff;
+  border-radius: inherit;
+}
+
+.playlist-progress > span::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.playlist-times,
+.playlist-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist-times {
+  font-size: 0.8rem;
+}
+
+.playlist-controls {
+  margin: 8px 0;
+}
+
+.playlist-controls svg {
+  width: 22px;
+  height: 22px;
+}
+
+.playlist-controls > svg:first-child,
+.playlist-controls > svg:last-child {
+  color: #aaa;
+}
+
+.playlist-pause {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  color: #242424;
+}
+
+.playlist-action {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .playlist-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .playlist-heading {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .playlist-service {
+    width: 100%;
+    border: 0;
+    padding: 0;
+  }
+
+  .playlist-add {
+    display: none;
+  }
+
+  .playlist-controls svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .playlist-pause {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ===== PREGUNTAS COMUNES ===== */
+body > .faq {
+  padding: 64px clamp(20px, 5vw, 80px);
+  background: var(--verde-ceremonia);
+  color: #fff;
+}
+
+.faq h2 {
+  margin: 0 0 32px;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq details {
+  background: #fff;
+  color: #000;
+  border-radius: 16px;
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  border-radius: 16px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "";
+  flex: 0 0 9px;
+  height: 9px;
+  border-right: 2px solid var(--verde-ceremonia);
+  border-bottom: 2px solid var(--verde-ceremonia);
+  transform: rotate(45deg);
+}
+
+.faq details[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.faq summary:hover {
+  background: #fdf7eb;
+}
+
+.faq summary:focus-visible {
+  outline: 3px solid #405c3c;
+  outline-offset: -4px;
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 24px 24px;
+  font-size: 1.1rem;
+  line-height: 1.65;
 }
 
 /* ===== ALERGIAS ===== */
@@ -178,6 +519,7 @@ body {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #fffdfffa; /* beige suave */
+  color: #000;
 
   padding: 80px 20px;
   position: relative;
@@ -203,16 +545,16 @@ footer {
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background-color: #d34d6e;
+  background-color: var(--verde-ceremonia);
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Kaushan Script", cursive;
   transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #b08d4e;
+  background-color: #789873;
 }
 
 /* ===== RECORRIDO EN AUTOBÚS ===== */
@@ -276,20 +618,14 @@ body > footer {
     padding-right: 42px;
   }
 
-  .hero-content {
-    min-width: 0;
-    padding: 30px 16px;
+  body > .buses {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 20px;
+    padding: 28px 20px;
   }
 
-  .hero h1 {
-    font-size: clamp(1.75rem, 7vw, 3rem);
-  }
-
-  .hotels,
-  .buses {
-    height: auto;
-    min-height: 250px;
-    padding-bottom: 24px;
+  .buses-icon {
+    min-height: 0;
   }
 }
 
