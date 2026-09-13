@@ -1,13 +1,25 @@
 /* ===== RESET BÁSICO ===== */
 :root {
   --verde-ceremonia: #90b08b;
+  --fondo-general: url("../img/FondoImagen.jpeg");
 }
 
 body {
   margin: 0;
   font-family: "Kaushan Script", cursive;
-  color: #fff;
-  background-color: var(--verde-ceremonia);
+  color: #000;
+  background-color: #fdf7eb;
+  isolation: isolate;
+}
+
+/* Una sola capa de fondo para toda la web, sin reiniciarse en cada sección. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #fdf7eb var(--fondo-general) center / cover no-repeat;
+  pointer-events: none;
 }
 
 /* ===== HERO ===== */
@@ -27,6 +39,8 @@ body {
 
 /* ===== CUENTA ATRÁS ===== */
 .countdown {
+  position: relative;
+  isolation: isolate;
   text-align: center;
   font-family: "Kaushan Script", cursive;
   font-size: 2rem;
@@ -51,6 +65,44 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+body > .countdown {
+  padding-left: min(25vw, 220px);
+  padding-right: min(25vw, 220px);
+}
+
+.countdown-person {
+  position: absolute;
+  top: 0;
+  width: min(25vw, 220px);
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  /* Integra el fondo blanco de los JPEG con el verde de la sección. */
+  mix-blend-mode: multiply;
+}
+
+.countdown-person--fernando {
+  left: 0;
+  object-position: left center;
+}
+
+.countdown-person--patricia {
+  right: 0;
+  object-position: right center;
+}
+
+@media (max-width: 600px) {
+  .countdown #timer {
+    gap: clamp(8px, 2vw, 16px);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .countdown #timer > div {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* ===== CEREMONIA ===== */
@@ -136,7 +188,7 @@ body > .buses {
   justify-content: center;
   gap: clamp(20px, 4vw, 56px);
   padding: 40px clamp(20px, 5vw, 80px);
-  background: transparent;
+  background: var(--fondo-general) center / cover no-repeat;
   text-align: left;
 }
 
@@ -181,8 +233,8 @@ body > .buses {
 /* ===== PLAYLIST ===== */
 body > .playlist {
   padding: 64px clamp(20px, 5vw, 80px);
-  background: #fff url("../img/fondoSpotify.jpeg") center / cover no-repeat;
-  color: var(--verde-ceremonia);
+  background: transparent url("../img/fondoSpotify.png") center / auto 100% no-repeat;
+  color: #000;
   text-align: center;
 }
 
@@ -196,7 +248,7 @@ body > .photos {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  background: var(--verde-ceremonia) url("../img/fondoFotos-verde.png") center / cover no-repeat;
+  background: var(--verde-ceremonia) url("../img/fondoFotos.png") center / cover no-repeat;
   /*background-color: var(--verde-ceremonia);
   background-image: url("../img/fondoFotos.jpeg");
   *//*background-size: 88% auto;*//*
@@ -441,8 +493,8 @@ body > .photos {
 /* ===== PREGUNTAS COMUNES ===== */
 body > .faq {
   padding: 64px clamp(20px, 5vw, 80px);
-  background: var(--verde-ceremonia);
-  color: #fff;
+  background: var(--fondo-general) top center / 424px auto repeat;
+  color: #000;
 }
 
 .faq h2 {
@@ -604,6 +656,27 @@ body > .faq {
   margin: 0;
 }
 
+/* ===== REGALOS ===== */
+.gifts {
+  text-align: center;
+  background: var(--fondo-general) top center / 424px auto repeat;
+  color: #000;
+}
+
+.gifts p {
+  max-width: 620px;
+  margin: 20px auto;
+  line-height: 1.7;
+}
+
+.gifts .gifts-iban {
+  box-sizing: border-box;
+  padding: 16px 24px;
+  border: 1px solid var(--verde-ceremonia);
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
 /* ===== AGRADECIMIENTO ===== */
 .thanks {
   text-align: center;
@@ -700,6 +773,20 @@ body > footer {
   .buses-icon {
     min-height: 0;
   }
+}
+
+/* Las secciones dejan ver el fondo continuo; se conservan las ilustraciones principales. */
+body > section:not(.hero):not(.ceremony-image):not(.celebration-image):not(.countdown):not(.ceremony-link):not(.celebration-link):not(.playlist),
+body > footer {
+  background: transparent;
+  color: #000;
+}
+
+/* Fondo beige para el contador y los enlaces de ubicación. */
+body > section.countdown,
+body > section.ceremony-link,
+body > section.celebration-link {
+  background: #fdf7eb url("../img/FondoBeis.PNG") center / cover no-repeat;
 }
 
 @media print {
