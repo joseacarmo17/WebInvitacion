@@ -151,11 +151,11 @@
       </details>
       <details>
         <summary>¿Cómo aviso de una alergia o intolerancia?</summary>
-        <p>Indícanoslo en el apartado «Alergias e intolerancias» que encontrarás a continuación, para que podamos tenerlo en cuenta.</p>
+        <p>Indícanoslo en el campo «Intolerancias» del formulario «¿Asistirás?», justo debajo de los hoteles cercanos, para que podamos tenerlo en cuenta.</p>
       </details>
       <details>
         <summary>¿Cómo confirmo mi asistencia?</summary>
-        <p>Ve al apartado «Confirmar asistencia» de esta web y utiliza su botón. ¡Confírmanos lo antes posible para ayudarnos a organizarlo todo!</p>
+        <p>Encontrarás el formulario «¿Asistirás?» justo debajo de los hoteles cercanos. ¡Confírmanos lo antes posible para ayudarnos a organizarlo todo!</p>
       </details>
       <details>
         <summary>¿Dónde puedo ver la playlist de la boda?</summary>
@@ -165,15 +165,6 @@
   </section>
 
   <!-- 7️⃣ ALERGIAS E INTOLERANCIAS -->
-  <section class="allergies">
-      <h2>Alergias e intolerancias</h2>
-      <p>
-          Si tienes alguna alergia o intolerancia alimenticia, por favor indícanoslo.
-      </p>
-      <a href="https://forms.gle/XXXX" target="_blank" class="btn">
-          Indicar alergias
-      </a>
-  </section>
 
 
     <!-- 5️⃣ HOTELES CERCANOS -->
@@ -199,12 +190,26 @@
 
 
   <!-- 5️⃣ CONFIRMAR ASISTENCIA -->
-  <section class="rsvp">
-    <h2>Confirmar asistencia</h2>
-    <p>Por favor, confirma tu asistencia lo antes posible</p>
-    <a href="https://forms.gle/XXXX" target="_blank" class="btn">
-      Confirmar asistencia
-    </a>
+  <section id="asistencia" class="rsvp" aria-labelledby="rsvp-title">
+    <h2 id="rsvp-title">¿Asistirás?</h2>
+    <form class="rsvp-form" id="rsvp-form">
+      <label for="guest-name">Nombre y apellidos</label>
+      <input id="guest-name" name="nombre" type="text" autocomplete="name" required>
+
+      <label for="guest-intolerances">Intolerancias</label>
+      <textarea id="guest-intolerances" name="intolerancias" rows="3" placeholder="Indica tus alergias o intolerancias, si tienes alguna"></textarea>
+
+      <fieldset>
+        <legend>¿Necesitarás bus?</legend>
+        <div class="rsvp-options">
+          <label><input type="radio" name="bus" value="si" required> Sí</label>
+          <label><input type="radio" name="bus" value="no" required> No</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn">Enviar</button>
+      <p id="rsvp-status" role="status" hidden></p>
+    </form>
   </section>
 
   <!-- 6️⃣ AGRADECIMIENTO -->
@@ -223,6 +228,7 @@
 
   <!-- JS -->
   <script src="js/countdown.js"></script>
+  <script src="js/rsvp.js"></script>
   <!--<script src="js/scroll-journey.js"></script>-->
 </body>
 </html>
