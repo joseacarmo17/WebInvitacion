@@ -120,8 +120,39 @@ body > .countdown {
 }
 
 body > .ceremony-image {
-  padding: 0;
+  position: relative;
+  isolation: isolate;
+  padding: 0 0 60px;
   background: transparent;
+}
+
+body > .celebration-image {
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  background: #fdf7eb url("../img/FondoBeis.PNG") center / cover no-repeat;
+}
+
+.celebration-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 72%, rgba(253, 247, 235, 0.35) 86%, #fdf7eb 100%);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.ceremony-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: #fdf7eb url("../img/FondoBeis.PNG") center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent 100%);
 }
 
 .ceremony-image > img {
@@ -129,6 +160,13 @@ body > .ceremony-image {
   margin: 0 auto;
   width: 60%;
   height: auto;
+}
+
+.celebration-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 .ceremony-text,
@@ -828,16 +866,21 @@ body > footer {
 }
 
 /* Las secciones dejan ver el fondo continuo; se conservan las ilustraciones principales. */
-body > section:not(.hero):not(.ceremony-image):not(.celebration-image):not(.countdown):not(.celebration-link):not(.playlist),
+body > section:not(.hero):not(.ceremony-image):not(.celebration-image):not(.countdown):not(.ceremony-link):not(.celebration-link):not(.playlist),
 body > footer {
   background: transparent;
   color: #000;
 }
 
-/* Fondo beige para el contador y el enlace de la celebración. */
+/* Fondo beige para el contador y los enlaces de ubicación. */
 body > section.countdown,
+body > section.ceremony-link,
 body > section.celebration-link {
   background: #fdf7eb url("../img/FondoBeis.PNG") center / cover no-repeat;
+}
+
+body > section.celebration-link {
+  background: transparent;
 }
 
 @media print {
