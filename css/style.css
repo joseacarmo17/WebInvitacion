@@ -13,7 +13,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background-image: url("../img/FondoPortada1.png"); /* TU IMAGEN */
+  background-image: url("../img/FondoPortada1-verde.png"); /* TU IMAGEN */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -196,7 +196,7 @@ body > .photos {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  background: var(--verde-ceremonia) url("../img/fondoFotos.jpeg") center / cover no-repeat;
+  background: var(--verde-ceremonia) url("../img/fondoFotos-verde.png") center / cover no-repeat;
   /*background-color: var(--verde-ceremonia);
   background-image: url("../img/fondoFotos.jpeg");
   *//*background-size: 88% auto;*//*
